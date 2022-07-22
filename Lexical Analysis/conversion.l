@@ -1,0 +1,33 @@
+%{
+    #include<stdio.h>
+%}
+
+Keyword "is"|"in"|"how"|"many"|"much"|"to"|"equals"|"gram"|"grams"|"kilogram"|"kilograms"|"kg"|"mg"|"milligram"|"milligrams"
+digit   [0-9]
+int     {digit}+
+float   {digit}+(.{digit})
+qm      "?"
+ws      [ \t]
+eq      "="
+
+%%
+
+{Keyword}   { printf("Keyword: %s\n", yytext); }
+{digit}     { printf("Digit: %s\n", yytext); }
+{int}       { printf("Integer: %s\n", yytext); }
+{float}     { printf("Float: %s\n", yytext); }
+{qm}        { printf("Question Mark: %s\n", yytext); }
+{eq}        { printf("Equals: %s\n", yytext); }
+{ws}        { printf("White Space: %s\n", yytext); }
+.           { printf("Invalid Token: %s\n", yytext); }
+\n          { return 0; }
+
+%%
+
+int yywrap() { return 0; }
+
+int main()
+{
+    yylex();
+    return 0;
+}

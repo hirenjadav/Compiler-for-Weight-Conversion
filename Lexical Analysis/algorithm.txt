@@ -1,0 +1,490 @@
+lexer 
+{
+    int c = 0;
+    bool f = false;
+    int len = string.length();
+    while not eof do
+    {
+        state="S";
+        while not eof do (c < len)
+        {
+            if (f)
+            {
+                f= false;
+            }
+            
+            char ch = nextchar();
+            
+            switch (state) 
+            {
+                
+                case state of "S": {
+
+                    case state of 
+                        'k':
+                            state = "1";
+                            ch = nextchar();
+                            break;
+                        
+                        'm':
+                            state = "14";
+                            ch = nextchar();
+                            break;
+                        
+                        'g':
+                            state = "34";
+                            ch = nextchar();
+                            break;
+                            
+                        'e':
+                            state = "43";
+                            ch = nextchar();
+                            break;
+
+                        'h':
+                            state = "49";
+                            ch = nextchar();
+                            break;
+
+                        't':
+                            state = "52";
+                            ch = nextchar();
+                            break;
+
+                        'i':
+                            state = "54";
+                            ch = nextchar();
+                            break;
+
+                        '?':
+                            state = "56";
+                            ch = nextchar();
+                            f = true;
+                            break;
+                        
+                        '=':
+                            state = "57";
+                            ch = nextchar();
+                            f = true;
+                            break;
+
+                        [0-9]:
+                            state = "58";
+                            ch = nextchar();
+                            break;
+
+                        Default:
+                            f = true;
+
+                    end case
+                }
+
+                case state of "1": {
+
+                    case state of 
+                        'i':
+                            state = "2";
+                            ch = nextchar();
+                            break;
+                        
+                        'g':
+                            state = "11";
+                            ch = nextchar();
+                            f = true;
+                            break;
+
+                        'Default':
+                            f=true;
+                            
+                    end case
+                }
+
+                case state of "2": {
+                    case state of 'l':
+                        state = "3";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "3": {
+                    case state of 'o':
+                        state = "4";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "4": {
+                    case state of 'g':
+                        state = "5";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "5": {
+                    case state of 'r':
+                        state = "6";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "6": {
+                    case state of 'a':
+                        state = "7";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "7": {
+                    case state of 'm':
+                        state = "8";
+                        ch = nextchar();
+                        f = true;
+                        break;
+
+                }
+
+                case state of "8": {
+                    case state of 
+                    's':
+                        state = "9";
+                        ch = nextchar();
+                        f = true;
+                        break;
+
+                    Default:
+                        state = "10";
+                        f = true;
+                }
+
+                case state of "11": {
+                    case state of 
+                    's':
+                        state = "12";
+                        ch = nextchar();
+                        f = true;
+                        break;
+
+                    Default:
+                        state = "13";
+                        f = true;
+                }
+
+                case state of "14": {
+
+                    case state of 
+                        'i':
+                            state = "15";
+                            ch = nextchar();
+                            break;
+                        
+                        'g':
+                            state = "25";
+                            ch = nextchar();
+                            f = true;
+                            break;
+                        
+                        'u':
+                            state = "28";
+                            ch = nextchar();
+                            break;
+                        
+                        'a':
+                            state = "31";
+                            ch = nextchar();
+                            break;
+
+                        'Default':
+                            f=true;
+                            
+                    end case
+                }
+
+                case state of "15": {
+                    case state of 'l':
+                        state = "16";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "16": {
+                    case state of 'l':
+                        state = "17";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "17": {
+                    case state of 'i':
+                        state = "18";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "18": {
+                    case state of 'g':
+                        state = "19";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "19": {
+                    case state of 'r':
+                        state = "20";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "20": {
+                    case state of 'a':
+                        state = "21";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "21": {
+                    case state of 'm':
+                        state = "22";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "22": {
+                    case state of 
+                    's':
+                        state = "23";
+                        ch = nextchar();
+                        f = true;
+                        break;
+
+                    Default:
+                        state = "24";
+                        f = true;
+                }
+
+                case state of "25": {
+                    case state of 
+                    's':
+                        state = "26";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                    
+                    Default:
+                        state = "27";
+                        f = true;
+                }
+
+                case state of "28": {
+                    case state of 'c':
+                        state = "29";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "29": {
+                    case state of 'h':
+                        state = "30";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "31": {
+                    case state of 'n':
+                        state = "32";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "32": {
+                    case state of 'y':
+                        state = "33";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "34": {
+                    case state of 
+                    'r':
+                        state = "35";
+                        ch = nextchar();
+                        break;
+                    
+                    'm':
+                        state = "40";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "35": {
+                    case state of 'a':
+                        state = "36";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "36": {
+                    case state of 'm':
+                        state = "37";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "37": {
+                    case state of 
+                    's':
+                        state = "38";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                    
+                    Default:
+                        state = "39";
+                        f = true;
+                }
+
+                case state of "40": {
+                    case state of 
+                    's':
+                        state = "41";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                    
+                    Default:
+                        state = "42";
+                        f = true;
+                }
+
+
+
+                case state of "43": {
+                    case state of 'q':
+                        state = "44";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "44": {
+                    case state of 'u':
+                        state = "45";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "45": {
+                    case state of 'a':
+                        state = "46";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "46": {
+                    case state of 'l':
+                        state = "47";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "47": {
+                    case state of 's':
+                        state = "48";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "49": {
+                    case state of 'o':
+                        state = "50";
+                        ch = nextchar();
+                        break;
+                }
+
+                case state of "50": {
+                    case state of 'w':
+                        state = "51";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "52": {
+                    case state of 'o':
+                        state = "53";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "54": {
+                    case state of 's':
+                        state = "55";
+                        ch = nextchar();
+                        f = true;
+                        break;
+                }
+
+                case state of "58": {
+                    case state of 
+                    [0-9]:
+                        ch = nextchar();
+                        break;
+
+                    '.':
+                        state = "60";
+                        ch = nextchar();
+                        break;
+
+                    default:
+                        state = "59";
+                        f = true;
+                }
+
+                case state of "60": {
+                    case state of 
+                    [0-9]:
+                        state = "61";
+                        ch = nextchar();
+                        break;
+
+                    default:
+                        f = true;
+                }
+
+                case state of "61": {
+                    case state of 
+                    [0-9]:
+                        ch = nextchar();
+
+                    default:
+                        state = "62";
+                        f = true;
+                }
+            }
+        }
+
+        case state of 
+            "9"|"10"|"12"|"13"|"23"|"24"|"26"|"27"|"30"|"33"|"38"|"39"|"41"|"42"|"48"|"51"|"53"|"55":
+                print(" keyword");
+            
+            "56":
+                print("qm");
+
+            "57":
+                print("eq");
+
+            "59":
+                print("Int");
+            
+            "62":
+                print("Float");
+
+            default:
+                print("invalid input");
+                ch := nextchar();
+        
+        end case;
+    }
+}
